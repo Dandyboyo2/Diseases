@@ -1,0 +1,3 @@
+object Plagues extends App {
+
+}
