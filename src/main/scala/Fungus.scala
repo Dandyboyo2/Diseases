@@ -1,3 +1,0 @@
-trait Fungus {
-
-}

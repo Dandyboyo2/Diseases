@@ -1,6 +1,6 @@
 class Alzheihmers extends Disease {
 
-  def affect(individual: Person): Person = {
-    individual.addSymptom("memoryLoss")
+  override def affect(individual: Person): Person = {
+    individual.addSymptom(List("memoryLoss"))
   }
 }

@@ -1,7 +1,11 @@
-class Person(name : String, isFemale : Boolean, symptoms : List[String]) {
+class Person(name : String, isFemale : Boolean, existingSymptoms : List[String]) {
 
-  def addSymptom(symptom : String) : Person = {
-    new Person (name, isFemale, symptoms :+ symptom)
+  def addSymptom(newSymptoms : List[String]) : Person = {
+    new Person (name, isFemale, existingSymptoms ++ newSymptoms)
+
+    }
+
+  override def toString () : String = {
+    s"$name has $existingSymptoms"
   }
-
 }
