@@ -23,4 +23,16 @@ object Plagues extends App {
   val affectedApprenti = for (apprentice <- theApprenti) yield malaria.affect(apprentice)
 
   println(affectedApprenti)
+
+
+  val firstNames: List[String]= List ("Dan", "Chris","Mike" )
+  val secondNames: List[String]= List ("smith", "wazowski","bailey" )
+
+  for{
+    firstName <- firstNames
+    secondName <- secondNames
+  }
+    println(s"$firstName $secondName")
+
 }
+
