@@ -1,18 +1,26 @@
 object Plagues extends App {
 
-  val andrew = new Person ("Andrew", false, (List("cough")))
+  val andrew = new Person ("Andrew", false, List("cough"))
 
-  val x = new Malaria
-  val y = new Influenza
-  val z = new Tetanus
+  val malaria = new Malaria
+  val influenza = new Influenza
+  val tetanus = new Tetanus
 
   println(
-    z.affect(y.affect(x.affect(andrew))))
+    tetanus.affect(influenza.affect(malaria.affect(andrew))))
 
-  val a = x.affect(andrew)
-  val b = y.affect(a)
-  val c = z.affect(b)
-  println(c)
+  val andrewMalaria = malaria.affect(andrew)
+  val andrewMalariaInfluenza = influenza.affect(andrewMalaria)
+  val andrewMalariaInfluenzaTetanus = tetanus.affect(andrewMalariaInfluenza)
+  println(andrewMalariaInfluenzaTetanus)
 
-  
+  val dan = new Person ("Dan", false, List("sudden sleep"))
+  val megan = new Person ("Megan", true, List("bloody stool"))
+  val mo = new Person ("Mo", false, Nil)
+  val brendan = new Person ("Bren Flakes", false, List("melt"))
+
+  val theApprenti: List[Person] = List(dan, megan, mo, brendan)
+  val affectedApprenti = for (apprentice <- theApprenti) yield malaria.affect(apprentice)
+
+  println(affectedApprenti)
 }
